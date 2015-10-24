@@ -51,7 +51,7 @@ function displayWidget(current,hourly,container) {
             var hourNode = $("<tr>");
             $("<td>").text(time).appendTo(hourNode);
             $("<td>").text("Hum. " + hourlyData.humidity.toString().split(".")[1] + "%").appendTo(hourNode);
-            $("<td>").text("Clo. " + (hourlyData.cloudCover == 1 ? "100%" : parseInt(hourlyData.cloudCover.toString().split(".")[1],10)) + "%").appendTo(hourNode);
+            $("<td>").text("Clo. " + (hourlyData.cloudCover == 1 ? "100%" : (parseInt(hourlyData.cloudCover.toString().split(".")[1],10) + "%"))).appendTo(hourNode);
             $("<td>").text(hourlyData.temperature + " \xB0C").appendTo(hourNode);
             $("<td>").text(hourlyData.windSpeed + " km/h").appendTo(hourNode);
             $("<td>").html($("<i>").addClass("wi").addClass("wi-forecast-io-" + hourlyData.icon)).appendTo(hourNode);
